@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Platform</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo {
+            color: #00A5EC;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-items {
+            display: flex;
+            align-items: center;
+        }
+        .nav-item {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 5px;
+        }
+        .offer {
+            background-color: #FFA500;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .search-bar input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .search-bar i {
+            margin-right: 5px;
+        }
+        .button {
+            padding: 8px 15px;
+            border-radius: 3px;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .login {
+            color: #00A5EC;
+            border: 1px solid #00A5EC;
+        }
+        .signup {
+            background-color: #00A5EC;
+            color: white;
+        }
+    
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+        .trending {
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem;
+            width: 400px;
+            height:200px ;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        .card-teal { background-color: #04736e; color: white; }
+        .card-blue { background-color: #afd0ef; }
+        .card-red { background-color: #911a05; color: white; }
+
+
+ .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.styled-button {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.styled-button:hover {
+    background-color: #669ef3;
+    border-color: #79bdee;
+}
+
+.internship-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1px;
+}
+
+.cards {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    width: 22%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.status {
+    color: green;
+    font-weight: bold;
+}
+
+.company, .location, .salary, .duration {
+    margin: 5px 0;
+    color: #555;
+}
+
+.internship-button, .certification-button {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.details-link {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    background-color: #ddd;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.certification-button {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px auto 0;
+    cursor: pointer;
+    text-align: center;
+    max-width: 300px;
+}
+.course-cards {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly between the cards */
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+    margin: 20px;
+  }
+
+  .cards1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .cards1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .details-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+
+
+  .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .container1 {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .column1 {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+        .column1 h3 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .column ul li {
+            margin: 5px 0;
+        }
+        .column ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .bottom1 {
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #444;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+
+
+        hero-section {
+    background-color: #e0f2ff;
+    text-align: center;
+    padding: 50px;
+}
+
+.hero-sections h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hero-sections .ratings {
+    font-size: 24px;
+    color: #333;
+}
+
+.google-play-btn {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.review-card h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.reviewer-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+
+/* Align the reviews section in a horizontal line */
+.reviews-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #e0f2ff;
+}
+
+.review-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Call-to-Action section styling */
+.cta-section {
+    background-color: #0066cc;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.cta-section .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+}
+
+.cta-btn {
+    background-color: white;
+    color: #0066cc;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">INTERNSHALA</div>
+        <div class="nav-items">
+            <a href="#" class="nav-item">Internships</a>
+            <a href="#" class="nav-item">Jobs</a>
+            <a href="#" class="nav-item">Courses</a>
+            <a href="#" class="nav-item">
+                <span class="offer">OFFER</span>
+            </a>
+            <div class="search-container">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" placeholder="Search" class="search-input">
+            </div>
+            <a href="#" class="button login">Login</a>
+            <a href="#" class="button signup">Candidate Sign-up</a>
+            <a href="#" class="button signup">Employer Sign-up</a>
+        </div>
+    </nav>
+    <main>
+        <section class="hero">
+            <h1>Make your dream career a reality</h1>
+            <h2>Trending on Career Platform🔥</h2>
+        </section>
+
+       
+           
+            <div class="card-container">
+                <div class="card card-teal">
+                    <h2>Online Courses with Guaranteed Placement</h2>
+                    <button class="button">Learn More</button>
+                </div>
+                <div class="card card-blue">
+                    <!-- <img src="college.jpeg" alt="Special Offer for College" /> -->
+<h2>Special Offer for College</h2>
+                    <p>Get FLAT 80% OFF on all online trainings</p>
+                    <button class="button">Know More</button>
+                </div>
+                <div class="card card-red">
+                  <h2>Join Top Tech Companies </h2>
+                    <button class="button">Apply Now</button>
+                </div>
+            </div>
+        
+    </main>
+    <div class="container">
+        <h2>Latest internships on Internshala</h2>
+ <div class="button-container">
+            <button class="styled-button">Work from home</button>
+            <button class="styled-button">Part-time</button>
+            <button class="styled-button">MBA</button>
+            <button class="styled-button">Engineering</button>
+            <button class="styled-button">Media</button>
+            <button class="styled-button">Design</button>
+            <button class="styled-button">Data Science</button>
+        </div>
+        <section class="trending">
+        <div class="internship-cards">
+            <div class="cards">
+                <div class="status">Actively hiring</div>
+                <h3>Travel & Tourism</h3>
+                <p class="company">Thomas Cook</p>
+                <p class="location">Chennai</p>
+                <p class="salary">₹ 8,000 /month</p>
+                <p class="duration">3 Months</p>
+                <button class="internship-button">Internship</button>
+                <a href="#" class="details-link">View details</a>
+            </div>
+
+            <div class="cards">
+                <div class="status">Actively hiring</div>
+                <h3>Project Management</h3>
+                <p class="company">Cultfit Healthcare Private Limited</p>
+                <p class="location">Bangalore</p>
+                <p class="salary">₹ 30,000 /month</p>
+                <p class="duration">3 Months</p>
+                <button class="internship-button">Internship</button>
+                <a href="#" class="details-link">View details</a>
+            </div>
+
+            <div class="cards">
+                <div class="status">Actively hiring</div>
+                <h3>YouTube Operations</h3>
+                <p class="company">Internshala</p>
+                <p class="location">Gurgaon</p>
+                <p class="salary">₹ 18,000 /month</p>
+                <p class="duration">6 Months</p>
+                <button class="internship-button">Internship</button>
+                <a href="#" class="details-link">View details</a>
+            </div>
+
+            <div class="cards">
+                <div class="status">Actively hiring</div>
+                <h3>Business Development (Sales)</h3>
+                <p class="company">Meraki</p>
+                <p class="location">Indore</p>
+                <p class="salary">₹ 4,000 /month + Incentives</p>
+                <p class="duration">6 Months</p>
+                <button class="internship-button">Internship</button>
+                <a href="#" class="details-link">View details</a>
+            </div>
+        </div>
+        </section>
+        <div class="pagination">
+            <button class="pagination-button">❮</button>
+            <button class="pagination-button">❯</button>
+        </div>
+        <h2>Latest Jobs on Internshala</h2>
+        <div class="button-container">
+                   <button class="styled-button">Work from home</button>
+                   <button class="styled-button">Part-time</button>
+                   <button class="styled-button">MBA</button>
+                   <button class="styled-button">Engineering</button>
+                   <button class="styled-button">Media</button>
+                   <button class="styled-button">Design</button>
+                   <button class="styled-button">Data Science</button>
+               </div>
+               <section class="trending">
+               <div class="internship-cards">
+                   <div class="cards">
+                       <div class="status">Actively hiring</div>
+                       <h3>procurement Trainee</h3>
+                       <p class="company">Salina laboraties private Ltd.</p>
+                       <p class="location">navi Mumbai</p>
+                       <p class="salary">₹ 2,00,000 - 3,00,000 /year</p>
+                       <button class="internship-button">Job</button>
+                       <a href="#" class="details-link">View details</a>
+                   </div>
+       
+                   <div class="cards">
+                       <div class="status">Actively hiring</div>
+                       <h3>Nusiness Development Executive</h3>
+                       <p class="company">Ion Exchange India Limited</p>
+                       <p class="location">Delhi, Solapur,Surat,Ahmedabad</p>
+                       <p class="salary">₹ 5,00,000 - 7,00,000 /year</p>
+                       <button class="internship-button">Job</button>
+                       <a href="#" class="details-link">View details</a>
+                   </div>
+       
+                   <div class="cards">
+                       <div class="status">Actively hiring</div>
+                       <h3>Sales Trainee -Animal Feed</h3>
+                       <p class="company">Godrej Agrovet Limited</p>
+                       <p class="location">Maharatra,Kerela,Telengana</p>
+                       <p class="salary">₹ 3,50,000 - 4,00,000 /year</p>
+                       <button class="internship-button">Job</button>
+                       <a href="#" class="details-link">View details</a>
+                   </div>
+       
+                   <div class="cards">
+                       <div class="status">Actively hiring</div>
+                       <h3>Sales Call Quality Auditior</h3>
+                       <p class="company">Internshala</p>
+                       <p class="location">Gurgaon</p>
+                       <p class="salary">₹ 3,00,000 - 4,00,000/year</p>
+                       <p class="duration">6 Months</p>
+                       <button class="internship-button">Internship</button>
+                       <a href="#" class="details-link">View details</a>
+                   </div>
+               </div>
+       </section>
+               <div class="pagination">
+                   <button class="pagination-button">❮</button>
+                   <button class="pagination-button">❯</button>
+               </div>
+       
+    </div>
+<section style = "background-color:#cfe8fa ;">
+    <section class="hero">
+        <h1>Popular certification courses</h1>
+        <h2>Fastest way to build your CV</h2>
+    </section>
+    <div class="course-cards">
+    <div class="cards1" style = "background-color: white;">
+        <image src = "./search.jpeg" style = "Width : 300px; height : 200px" class="status"></image>
+        <p class="company">8 weeks</p>
+        <h3 class="location">Web development</h3>
+        <p class="salary"> ⭐4.1 |91,313 learners</p>
+        <a href="#" class="details-link">Know more  ></a>
+    </div>
+    <div class="cards1" style = "background-color: white;">
+        <image src = "./search.jpeg" style = "Width : 300px; height : 200px" class="status"></image>
+        <p class="company">6 weeks</p>
+        <h3 class="location">Programming with Python</h3>
+        <p class="salary"> ⭐4.1 |73,600 learners</p>
+        <a href="#" class="details-link">Know more  ></a>
+    </div>
+    <div class="cards1" style = "background-color: white;">
+        <image src = "search.jpeg" style = "Width : 300px; height : 200px" class="status"></image>
+        <p class="company">8 weeks</p>
+        <h3 class="location">Digital marketing</h3>
+        <p class="salary"> ⭐4.1 |56,913 learners</p>
+        <a href="#" class="details-link">Know more  -></a>
+    </div>
+    <div class="cards1" style = "background-color: white;">
+        <image src = "./search.jpeg" style = "Width : 300px; height : 200px" class="status"></image>
+        <p class="company">6 weeks</p>
+        <h3 class="location">Machine learning</h3>
+        <p class="salary"> ⭐4.5 |28,103 learners</p>
+        <a href="#" class="details-link">Know more  -></a>
+    </div>
+ 
+    </div>
+    <section class="hero">
+        <h1>Placement guarantee courses</h1>
+        <h3>✓ Guarantee placement  ✓ Get 100% refund if not hired  ✓Become job ready</h3>
+    </section>
+   
+    <div class="course-cards">
+    <div class="cards1" style = "background-color: white;">
+        <image src = "./college.jpeg" style = "Width : 300px; height : 200px" class="status"></image>
+        <h3>Full stack Development Course</h3>
+        <h2 style = "background-color:burlywood ;">course with gurantee course</h2>
+        <p class="company">◷ 8 month course</p>
+        <h3 class="location" >₹ Get placed with ₹ 3-10 LPA Salary</h3>
+        <p class="salary">👜 1.08 Lac + opportunities</p>
+        <a href="#" class="details-link">Know more  ></a>
+    </div>
+
+    <div class="cards1" style = "background-color: white;">
+    <image src = "./college.jpeg" style = "Width : 300px; height : 200px" class="status"></image>
+    <h3  >Data Science Course</h3>
+    <h2  style = "background-color:burlywood ;">course with gurantee internship</h2>
+    <p class="company">◷ 6 month course</p>
+    <h3 class="location">₹ Get confirmed ₹ 40,000 total stipend</h3>
+    <p class="salary">👜 45,000 + opportunities   </p>
+    <a href="#" class="details-link">Know more  ></a>
+</div>
+
+<div class="cards1" style = "background-color: white;">
+<image src = "./college.jpeg" style = "Width : 300px; height : 200px" class="status"></image>
+    <h3>Human Resource Management Course</h3>
+    <h2  style = "background-color:burlywood ;">course with gurantee internship</h2>
+    <p class="company">◷ 4 month course</p>
+    <h3 class="location">₹ Get confirmed ₹ 3-10LPA salary</h3>
+    <p class="salary">👜 2.91 Lac + opportunities   </p>
+    <a href="#" class="details-link">Know more  ></a>
+
+</div>
+
+
+<div class="cards1" style = "background-color: white;">
+<image src = "./college.jpeg" style = "Width : 300px; height : 200px" class="status"></image>
+<h3>Digital marketing Course</h3>
+<h2  style = "background-color:burlywood ;">course with gurantee job</h2>
+<p class="company">◷ 5 month course</p>
+<h3 class="location">₹ Get confirmed ₹ 3-10LPA salary</h3>
+<p class="salary">👜 6.25 Lac + opportunities   </p>
+<a href="#" class="details-link">Know more  ></a>
+
+</div>
+
+    </div>
+</section>
+
+
+
+<section class="hero">
+    <h1>Placement guarantee courses</h1>
+    <h3>✓ Guarantee placement  ✓ Get 100% refund if not hired  ✓Become job ready</h3>
+</section>
+<div class="course-cards">
+<div class="cards1" style = "background-color: white; width : 600px ;background: url('./aeroplane.jpeg') no-repeat center center; background-size: cover;;"  >
+    <h2 style=" color:#044be6">Study Abroad</h2>
+    <ul><h3>Stream line path to international studies</h3>
+        <li>Expert guidance throughout your application journey</li> 
+        <li>Scholerships & financial aid assistance</li>
+        <li>Streamed visa processing & support</li>
+        <br/>
+    <button style = "background-color:#669ef3 ; color: white">Know more </button>
+    
+   
+</ul>  
+</div>
+<div class="cards1" style = "background-color: white; width : 600px ;background: url('./small.jpeg') no-repeat center center; background-size: cover;">
+
+    <h2 style=" color:#044be6">Study in India</h2>
+
+    <ul><h3>Find your perfect degree from India's best universities</h3>
+        <li>UGC - recognized online & on-campus degrees</li> 
+        <li>NAAC 'A++', and top NIRF ranked universities</li>
+        <li>Expert guidance  from 500+ mentors</li>
+        <br/>
+    <button style = "background-color:#669ef3 ; color: white ">Know more </button>
+    
+   
+</ul>  
+</div>
+
+</div>
+</section>
+
+<section class="hero-sections">
+   <center> <h1>Join the pool of 21Mn+ students and get started with your career</h1></center>
+    <center>Play Store Ratings</center>
+    <div class="ratings">
+        <h2>4.0 <span>⭐️⭐️⭐️⭐️</span></h2>
+        <center style=" color:#044be6">(39K Reviews)</center>
+       <center> <button class="google-play-btn" style = "justify-content: center;font-size: medium; height:50px ; width : 200px">Get it on Google Play</button></center>
+    </div>
+</section>
+
+<!-- Reviews Section -->
+<div class="reviews-section">
+    <div class="review-card">
+        <h3>Must-have app for students</h3>
+        <p>I got my first internship from here. Internshala is a must for career-oriented students. This app has a lot of opportunities for every kind of student.</p>
+        <div class="reviewer-info">
+            <img src="./boyw.jpeg"Reviewer Photo" class="reviewer-photo">
+            <p>Yogesh Singh</p>
+            <span>⭐⭐⭐⭐</span>
+        </div>
+    </div>
+
+    <div class="review-card">
+        <h3>I landed a job at Amazon</h3>
+        <p>I applied to Amazon and got the job! My friend suggested the Data Science Placement Guarantee Course. The placement team helped me with everything.</p>
+        <div class="reviewer-info">
+            <img src="./girl.jpeg" alt="Reviewer Photo" class="reviewer-photo">
+            <p>Yaswanth Mandapati</p>
+            <span>⭐⭐⭐⭐⭐</span>
+        </div>
+    </div>
+</div>
+
+<!-- Call-to-Action Section -->
+<div class="cta-section">
+    <h2>Empower your career with Internshala today</h2>
+    <button class="cta-btn">Continue with Google</button>
+    <button class="cta-btn">Register Now</button>
+</div>
+
+<div class="footer">
+    <div class="container1">
+        <div class="column">
+            <h3>Internships by Places</h3>
+            <ul>
+                <li><a href="#">Internship in India</a></li>
+                <li><a href="#">Internship in Delhi</a></li>
+                <li><a href="#">Internship in Bangalore</a></li>
+                <li><a href="#">Internship in Hyderabad</a></li>
+                <li><a href="#">Internship in Mumbai</a></li>
+                <li><a href="#">Internship in Chennai</a></li>
+                <li><a href="#">Internship in Gurgaon</a></li>
+                <li><a href="#">Internship in Kolkata</a></li>
+                <li><a href="#">Virtual Internship</a></li>
+                <li><a href="#">View all Internships</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Internships by Stream</h3>
+            <ul>
+                <li><a href="#">Computer Science Internship</a></li>
+                <li><a href="#">Electronics Internship</a></li>
+                <li><a href="#">Mechanical Internship</a></li>
+                <li><a href="#">Civil Internship</a></li>
+                <li><a href="#">Marketing Internship</a></li>
+                <li><a href="#">Chemical Internship</a></li>
+                <li><a href="#">Finance Internship</a></li>
+                <li><a href="#">Summer Research Fellowship</a></li>
+                <li><a href="#">Campus Ambassador Program</a></li>
+                <li><a href="#">View all Internships</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Jobs by Places</h3>
+            <ul>
+                <li><a href="#">Jobs in Delhi</a></li>
+                <li><a href="#">Jobs in Mumbai</a></li>
+                <li><a href="#">Jobs in Bangalore</a></li>
+                <li><a href="#">Jobs in Hyderabad</a></li>
+                <li><a href="#">Jobs in Chennai</a></li>
+                <li><a href="#">Jobs in Kolkata</a></li>
+                <li><a href="#">Jobs in Gurgaon</a></li>
+                <li><a href="#">Jobs in Pune</a></li>
+                <li><a href="#">Virtual Jobs</a></li>
+                <li><a href="#">View all Jobs</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Jobs by Stream</h3>
+            <ul>
+                <li><a href="#">IT Jobs</a></li>
+                <li><a href="#">Engineering Jobs</a></li>
+                <li><a href="#">Finance Jobs</a></li>
+                <li><a href="#">Marketing Jobs</a></li>
+                <li><a href="#">Sales Jobs</a></li>
+                <li><a href="#">HR Jobs</a></li>
+                <li><a href="#">Operations Jobs</a></li>
+                <li><a href="#">Research Jobs</a></li>
+                <li><a href="#">Management Jobs</a></li>
+                <li><a href="#">View all Jobs</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Courses</h3>
+            <ul>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Data Science</a></li>
+                <li><a href="#">Machine Learning</a></li>
+                <li><a href="#">AI Courses</a></li>
+                <li><a href="#">Cyber Security</a></li>
+                <li><a href="#">Cloud Computing</a></li>
+                <li><a href="#">Marketing Courses</a></li>
+                <li><a href="#">Finance Courses</a></li>
+                <li><a href="#">Management Courses</a></li>
+                <li><a href="#">View all Courses</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#">FB</a>
+            <a href="#">TW</a>
+            <a href="#">IN</a>
+            <a href="#">YT</a>
+        </div>
+    </div>
+
+
+</body>
+</html>
